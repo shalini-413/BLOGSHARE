@@ -1,0 +1,2 @@
+exclude:
+  - quoteshare-server/node_modules
