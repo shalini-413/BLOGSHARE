@@ -10,7 +10,7 @@ const app = express();
 // app.use(cors());
 
 app.use(cors({
-  origin: "https://blog-project-opal-six.vercel.app",
+  origin: "https://blogshare-pied.vercel.app",
   credentials: true,
   methods: ["GET","POST","PATCH","DELETE","OPTIONS"],
   allowedHeaders: ["Content-Type","Authorization"]
