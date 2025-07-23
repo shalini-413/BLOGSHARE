@@ -33,7 +33,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://blogproject-1-3uio.onrender.com"],
+    allow_origins=["https://server-305b.onrender.com"],
     # allow_origins=["http://localhost:5174"],
     # allow_origins=["*"],
     allow_credentials=True,
