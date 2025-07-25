@@ -13,22 +13,40 @@ export default function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await loginUser(formData); 
-      const res = await getCurrentUser(); 
-      console.log("Logged in user:", res.data); 
-            // 👇 3. UPDATE the global user state with the fetched user data
-            setUser(res.data);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await loginUser(formData); 
+  //     const res = await getCurrentUser(); 
+  //     console.log("Logged in user:", res.data); 
+  //           // 👇 3. UPDATE the global user state with the fetched user data
+  //           setUser(res.data);
 
-      toast.success("Login successful! 🎉");
-      navigate("/dashboard");
-    } catch (err) {
-      console.error("Login error:", err);
-      toast.error("Login failed");
-    }
-  };
+  //     toast.success("Login successful! 🎉");
+  //     navigate("/dashboard");
+  //   } catch (err) {
+  //     console.error("Login error:", err);
+  //     toast.error("Login failed");
+  //   }
+  // };
+
+    // 👇 THIS FUNCTION IS NOW CORRECTED TO FIX THE TIMING ISSUE 👇
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        // 1. Call loginUser and get the user data directly from the response
+        const { user } = await loginUser(formData);
+  
+        // 2. Use this data to set the global state
+        setUser(user);
+  
+        toast.success("Login successful! 🎉");
+        navigate("/dashboard");
+      } catch (err) {
+        console.error("Login error:", err);
+        toast.error("Login failed. Please check your credentials.");
+      }
+    };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-neutral-950 flex items-center justify-center px-4">
