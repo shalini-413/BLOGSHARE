@@ -51,7 +51,7 @@ export default function PublicProfile() {
     if (!comment || !blog) return;
 
     try {
-      const res = await addComment(blog._id, { text: comment }); // ✅ store result
+      const res = await addComment(blog._id, { text: comment }); // store result
       console.log("Add comment response:", res.data);
       setComment("");
       setBlog(res.data.blog);

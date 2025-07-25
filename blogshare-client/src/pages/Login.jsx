@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { loginUser, getCurrentUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast"; 
-import { useAuth } from "../contexts/AuthContext"; // 👈 1. IMPORT useAuth
+import { useAuth } from "../contexts/AuthContext"; 
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
-  const { setUser } = useAuth(); // 👈 2. GET the setUser function from context
+  const { setUser } = useAuth(); // 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,7 +30,7 @@ export default function Login() {
   //   }
   // };
 
-    // 👇 THIS FUNCTION IS NOW CORRECTED TO FIX THE TIMING ISSUE 👇
+    // 
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
@@ -40,7 +40,7 @@ export default function Login() {
         // 2. Use this data to set the global state
         setUser(user);
   
-        toast.success("Login successful! 🎉");
+        toast.success("Login successful ^_^");
         navigate("/dashboard");
       } catch (err) {
         console.error("Login error:", err);

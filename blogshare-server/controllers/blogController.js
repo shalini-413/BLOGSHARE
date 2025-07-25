@@ -123,7 +123,7 @@ export const createComment = async (req, res) => {
 
     let userId = null;
 
-    // Try to extract user ID from cookie token (if exists)
+
     const token = req.cookies?.token;
     if (token) {
       try {
@@ -141,7 +141,7 @@ export const createComment = async (req, res) => {
       text,
       flagged,
       hatePercent,
-      user: userId, // Either ObjectId or null (for anonymous)
+      user: userId, 
     };
 
     blog.comments.push(comment);
