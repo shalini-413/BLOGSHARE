@@ -26,3 +26,6 @@ A modern, full-stack blogging platform that allows users to create and share art
 * **Frontend**: React, Vite, Tailwind CSS, React Router, Axios
 * **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt.js
 * **AI Service**: Python, Flask, Scikit-learn, NLTK
+
+## Happy Coding
+## Shalini :)
