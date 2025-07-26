@@ -35,7 +35,7 @@ const Register = () => {
     e.preventDefault();
     setErrors({});
     try {
-      registerSchema.parse(form);
+      registerSchema.parse(form);63
       await registerUser(form);
       toast.success("Registered successfully! Please login.");
       navigate("/login");
